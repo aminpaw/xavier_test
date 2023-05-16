@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+<node pkg="tf2_ros" type="static_transform_publisher" name="obj_f_to_cg" args="-1 0 0 0 0 0 velodyne cg"/>
+<node name="purepursuit_controller" pkg="pure_pursuit" type="purepursuit_node.py" output="screen"></node>
+<!-- <node pkg="ipgtesting" type="IPG_Bridge" name="IPG_Bridge" output="screen" /> -->
+<include file="$(find pure_pursuit)/launch/parameters.launch" />
+</launch>
